@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Link2, Search, Zap, History } from 'lucide-react'
 import { useStore } from '../store/useStore'
+import OrbitBackground from '../components/OrbitBackground'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('link') // 'name' | 'link'
@@ -24,8 +25,11 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-grid pb-32 flex flex-col justify-center px-4">
-      <div className="max-w-4xl w-full mx-auto text-center space-y-12">
+    <div className="min-h-screen bg-grid pb-32 flex flex-col justify-center px-4 relative overflow-hidden">
+      {/* Rotating orbit background with shopping site logos */}
+      <OrbitBackground />
+
+      <div className="max-w-4xl w-full mx-auto text-center space-y-12 relative z-10">
         {/* Hero Headers */}
         <div className="space-y-6">
           <motion.div
